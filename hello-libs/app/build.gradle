@@ -3,7 +3,6 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion = 25
     buildToolsVersion = '26.0.2'
-
     defaultConfig {
         applicationId = 'com.example.hellolibs'
         minSdkVersion 14
@@ -38,6 +37,15 @@ android {
             path 'src/main/cpp/CMakeLists.txt'
         }
     }
+    compileSdkVersion 25
+    buildToolsVersion '26.0.2'
+    dexOptions {
+        incremental true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -47,5 +55,5 @@ dependencies {
     // uncomment out this one to generate lib binaries,
     // and also uncommented out the one in settings.gradle
     // after lib is generated, just comment them out again
-//        compile project(':gen-libs')
+    //        compile project(':gen-libs')
 }
