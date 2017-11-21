@@ -1,38 +1,47 @@
 apply plugin: 'com.android.application'
 
- android {
-     compileSdkVersion 24
-     buildToolsVersion '26.0.2'
+android {
+    compileSdkVersion 25
+    buildToolsVersion '26.0.2'
 
-     defaultConfig {
-         applicationId 'com.sample.camera.basic'
-         minSdkVersion  24
-         targetSdkVersion 24
-         ndk {
-             abiFilters 'armeabi-v7a', 'arm64-v8a'
-         }
-         externalNativeBuild {
-             cmake {
-                 arguments '-DANDROID_STL=c++_static', '-DANDROID_TOOLCHAIN=clang'
-                 arguments '-DANDROID_PLATFORM=android-24'
-             }
-         }
-     }
-     buildTypes {
-         release {
-             minifyEnabled false
-             proguardFiles getDefaultProguardFile('proguard-android.txt'),
-                          'proguard-rules.pro'
-         }
-     }
-     externalNativeBuild {
-         cmake {
-             path 'src/main/cpp/CMakeLists.txt'
-         }
-     }
+    defaultConfig {
+        applicationId 'com.sample.camera.basic'
+        minSdkVersion 23
+        targetSdkVersion 25
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
+        }
+        externalNativeBuild {
+            cmake {
+                arguments '-DANDROID_STL=c++_static', '-DANDROID_TOOLCHAIN=clang'
+                arguments '-DANDROID_PLATFORM=android-24'
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'),
+                    'proguard-rules.pro'
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path 'src/main/cpp/CMakeLists.txt'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    productFlavors {
+    }
+    dexOptions {
+        incremental false
+    }
 }
 
 dependencies {
-    compile fileTree(dir:'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:25.2.0'
 }
