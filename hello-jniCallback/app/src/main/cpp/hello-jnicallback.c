@@ -19,6 +19,7 @@
 #include <jni.h>
 #include <android/log.h>
 #include <assert.h>
+#include <unistd.h>
 
 
 // Android log function wrappers
@@ -42,6 +43,42 @@ typedef struct tick_context {
 } TickContext;
 TickContext g_ctx;
 
+
+#define  MAX_THREADS_NUM 6
+pthread_t s_thread_id[MAX_THREADS_NUM];
+
+static void* runRegImageTask(void *arg) {
+    while(1) {
+        usleep(800000);
+        char *p=malloc(1024*1024*16);
+        memset(p,0xff,1024*1024*16);
+        LOGE("hello\n");
+        continue;
+    }
+}
+int Image_InitRegImageProcessWork(pthread_t *thread_id) {
+
+    int ret;
+    ret = pthread_create(thread_id, NULL, runRegImageTask, NULL);
+    if (ret < 0) {
+        LOGI("Creating simple photograghic thread fails\n");
+        return -1;
+    }
+
+    return 0;
+}
+
+void Melux_PalmXInit()
+{
+    int ret;
+    ret = Image_InitRegImageProcessWork(&s_thread_id[1]);
+    if(-1 == ret)
+    {
+        LOGI("Melux_PalmXInit : Image_InitRegImageProcessWork error!\n");
+        return ;
+    }
+
+}
 /* This is a trivial JNI example where we use a native method
  * to return a new VM String. See the corresponding Java source
  * file located at:
@@ -82,6 +119,7 @@ Java_com_example_hellojnicallback_MainActivity_stringFromJNI( JNIEnv* env, jobje
 #else
 #define ABI "unknown"
 #endif
+    Melux_PalmXInit();
     return (*env)->NewStringUTF(env, "Hello from JNI !  Compiled with ABI " ABI ".");
 }
 
@@ -244,7 +282,7 @@ void*  UpdateTicks(void* context) {
             sendJavaMsg(env, pctx->jniHelperObj, statusId,
                         "TickerThread error: processing too long!");
         }
-    }
+   }
 
     sendJavaMsg(env, pctx->jniHelperObj, statusId,
                 "TickerThread status: ticking stopped");
