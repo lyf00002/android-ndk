@@ -15,7 +15,59 @@
  *
  */
 #include <string.h>
+#include <pthread.h>
 #include <jni.h>
+#include <android/log.h>
+#include <assert.h>
+#include <unistd.h>
+
+
+
+// Android log function wrappers
+static const char* kTAG = "hellojni";
+#define LOGI(...) \
+  ((void)__android_log_print(ANDROID_LOG_INFO, kTAG, __VA_ARGS__))
+#define LOGW(...) \
+  ((void)__android_log_print(ANDROID_LOG_WARN, kTAG, __VA_ARGS__))
+#define LOGE(...) \
+  ((void)__android_log_print(ANDROID_LOG_ERROR, kTAG, __VA_ARGS__))
+
+
+#define  MAX_THREADS_NUM 6
+pthread_t s_thread_id[MAX_THREADS_NUM];
+
+static void* runRegImageTask(void *arg) {
+    while(1) {
+        usleep(800000);
+        char *p=malloc(1024*1024*16);
+        memset(p,0xff,1024*1024*16);
+        LOGE("hello\n");
+        continue;
+    }
+}
+int Image_InitRegImageProcessWork(pthread_t *thread_id) {
+
+    int ret;
+    ret = pthread_create(thread_id, NULL, runRegImageTask, NULL);
+    if (ret < 0) {
+        LOGI("Creating simple photograghic thread fails\n");
+        return -1;
+    }
+
+    return 0;
+}
+
+void Melux_PalmXInit()
+{
+    int ret;
+    ret = Image_InitRegImageProcessWork(&s_thread_id[1]);
+    if(-1 == ret)
+    {
+        LOGI("Melux_PalmXInit : Image_InitRegImageProcessWork error!\n");
+        return ;
+    }
+
+}
 
 /* This is a trivial JNI example where we use a native method
  * to return a new VM String. See the corresponding Java source
@@ -58,10 +110,7 @@ Java_com_example_hellojni_HelloJni_stringFromJNI( JNIEnv* env,
 #else
 #define ABI "unknown"
 #endif
-    char *p =NULL;
-    char a;
-    *p=&a;
-    *p='A';
 
+    Melux_PalmXInit();
     return (*env)->NewStringUTF(env, "Hello from JNI !  Compiled with ABI " ABI ".");
 }
