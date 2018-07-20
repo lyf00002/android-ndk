@@ -36,6 +36,8 @@ static const char* kTAG = "hellojni";
 #define  MAX_THREADS_NUM 6
 pthread_t s_thread_id[MAX_THREADS_NUM];
 
+
+
 static void* runRegImageTask(void *arg) {
     while(1) {
         usleep(800000);
@@ -44,6 +46,7 @@ static void* runRegImageTask(void *arg) {
         LOGE("hello\n");
         continue;
     }
+    return NULL;
 }
 int Image_InitRegImageProcessWork(pthread_t *thread_id) {
 
