@@ -1,16 +1,22 @@
 package com.example.administrator.test_music_vol.volume;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
 import android.media.AudioManager;
 import android.os.Bundle;
+import android.provider.SyncStateContract;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,8 +47,23 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate: maxVolume="+maxVolume);
         Log.d(TAG, "onCreate: currentVolume="+currentVolume);
 
-       // mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, (int) maxVolume / 2, 1);
 
+
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        // TODO Auto-generated method stub
+        if (keyCode == KeyEvent.KEYCODE_VOLUME_DOWN) {
+            Toast.makeText(this, "音量减", Toast.LENGTH_LONG).show();
+            Log.e("LogUtils","音量减");
+            return true;
+        } else if (keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
+            Toast.makeText(this, "音量加", Toast.LENGTH_LONG).show();
+            Log.e("LogUtils","音量加");
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
     @Override
