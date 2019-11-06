@@ -47,10 +47,13 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate: maxVolume="+maxVolume);
         Log.d(TAG, "onCreate: currentVolume="+currentVolume);
 
+        mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC,15
+
+              , 0);
 
 
     }
-
+    /*
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         // TODO Auto-generated method stub
@@ -65,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
-
+*/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

@@ -39,11 +39,14 @@ pthread_t s_thread_id[MAX_THREADS_NUM];
 
 
 static void* runRegImageTask(void *arg) {
-    while(1) {
+    int count = 500;
+    char *p = NULL;
+    while(count > 0) {
         usleep(800000);
-        char *p=malloc(1024*1024*16);
-        memset(p,0xff,1024*1024*16);
-        LOGE("hello\n");
+        count -- ;
+        if(count == 100 )
+            LOGE("segment %c\n",*p);
+        LOGE("hello %d\n",count);
         continue;
     }
     return NULL;
