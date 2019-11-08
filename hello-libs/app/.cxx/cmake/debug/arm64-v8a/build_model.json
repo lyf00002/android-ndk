@@ -1,0 +1,70 @@
+{
+  "variant": {
+    "module": {
+      "rootBuildGradleFolder": "D:\\opensource\\android-ndk\\hello-libs",
+      "sdkFolder": "D:\\sdk",
+      "isNativeCompilerSettingsCacheEnabled": false,
+      "isBuildOnlyTargetAbiEnabled": true,
+      "splitsAbiFilterSet": [],
+      "intermediatesFolder": "D:\\opensource\\android-ndk\\hello-libs\\app\\build\\intermediates",
+      "gradleModulePathName": ":app",
+      "moduleRootFolder": "D:\\opensource\\android-ndk\\hello-libs\\app",
+      "makeFile": "D:\\opensource\\android-ndk\\hello-libs\\app\\src\\main\\cpp\\CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "compilerSettingsCacheFolder": "D:\\opensource\\android-ndk\\hello-libs\\.cxx",
+      "cxxFolder": "D:\\opensource\\android-ndk\\hello-libs\\app\\.cxx",
+      "ndkFolder": "D:\\sdk\\ndk-bundle",
+      "ndkVersion": "20.0.5594570",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "cmakeToolchainFile": "."
+    },
+    "buildSystemArgumentList": [
+      "-DANDROID_PLATFORM\u003dandroid-21",
+      "-DANDROID_TOOLCHAIN\u003dclang"
+    ],
+    "cFlagList": [],
+    "cppFlagsList": [],
+    "variantName": "debug",
+    "soFolder": "D:\\opensource\\android-ndk\\hello-libs\\app\\build\\intermediates\\cmake\\debug\\lib",
+    "objFolder": "D:\\opensource\\android-ndk\\hello-libs\\app\\build\\intermediates\\cmake\\debug\\obj",
+    "jsonFolder": "D:\\opensource\\android-ndk\\hello-libs\\app\\.cxx\\cmake\\debug",
+    "gradleBuildOutputFolder": "D:\\opensource\\android-ndk\\hello-libs\\app\\.cxx\\cxx\\debug",
+    "isDebuggableEnabled": true,
+    "validAbiList": [
+      "ARM64_V8A"
+    ],
+    "buildTargetSet": []
+  },
+  "abi": "ARM64_V8A",
+  "abiPlatformVersion": 21,
+  "cxxBuildFolder": "D:\\opensource\\android-ndk\\hello-libs\\app\\.cxx\\cmake\\debug\\arm64-v8a",
+  "jsonFile": "D:\\opensource\\android-ndk\\hello-libs\\app\\.cxx\\cmake\\debug\\arm64-v8a\\android_gradle_build.json",
+  "gradleBuildOutputFolder": "D:\\opensource\\android-ndk\\hello-libs\\app\\.cxx\\cxx\\debug\\arm64-v8a",
+  "objFolder": "D:\\opensource\\android-ndk\\hello-libs\\app\\build\\intermediates\\cmake\\debug\\obj\\arm64-v8a",
+  "buildCommandFile": "D:\\opensource\\android-ndk\\hello-libs\\app\\.cxx\\cmake\\debug\\arm64-v8a\\build_command.txt",
+  "buildOutputFile": "D:\\opensource\\android-ndk\\hello-libs\\app\\.cxx\\cmake\\debug\\arm64-v8a\\build_output.txt",
+  "modelOutputFile": "D:\\opensource\\android-ndk\\hello-libs\\app\\.cxx\\cmake\\debug\\arm64-v8a\\build_model.json",
+  "cmake": {
+    "cmakeListsWrapperFile": "D:\\opensource\\android-ndk\\hello-libs\\app\\.cxx\\cxx\\debug\\arm64-v8a\\CMakeLists.txt",
+    "toolchainWrapperFile": "D:\\opensource\\android-ndk\\hello-libs\\app\\.cxx\\cxx\\debug\\arm64-v8a\\android_gradle_build.toolchain.cmake",
+    "buildGenerationStateFile": "D:\\opensource\\android-ndk\\hello-libs\\app\\.cxx\\cxx\\debug\\arm64-v8a\\build_generation_state.json",
+    "cacheKeyFile": "D:\\opensource\\android-ndk\\hello-libs\\app\\.cxx\\cxx\\debug\\arm64-v8a\\compiler_cache_key.json",
+    "compilerCacheUseFile": "D:\\opensource\\android-ndk\\hello-libs\\app\\.cxx\\cxx\\debug\\arm64-v8a\\compiler_cache_use.json",
+    "compilerCacheWriteFile": "D:\\opensource\\android-ndk\\hello-libs\\app\\.cxx\\cxx\\debug\\arm64-v8a\\compiler_cache_write.json",
+    "toolchainSettingsFromCacheFile": "D:\\opensource\\android-ndk\\hello-libs\\app\\.cxx\\cxx\\debug\\arm64-v8a\\compiler_settings_cache.cmake",
+    "cmakeWrappingBaseFolder": "."
+  },
+  "jsonGenerationLoggingRecordFile": "D:\\opensource\\android-ndk\\hello-libs\\app\\.cxx\\cmake\\debug\\arm64-v8a\\json_generation_record.json",
+  "compileCommandsJsonFile": "D:\\opensource\\android-ndk\\hello-libs\\app\\.cxx\\cmake\\debug\\arm64-v8a\\compile_commands.json"
+}

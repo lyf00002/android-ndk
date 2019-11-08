@@ -1,0 +1,57 @@
+
+{
+	"buildFiles" : 
+	[
+		"D:/opensource/android-ndk/hello-libs/app/src/main/cpp/CMakeLists.txt"
+	],
+	"cleanCommands" : 
+	[
+		"D:\\sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build D:\\opensource\\android-ndk\\hello-libs\\app\\.externalNativeBuild\\cmake\\debug\\arm64-v8a --target clean"
+	],
+	"cppFileExtensions" : [ "cpp" ],
+	"libraries" : 
+	{
+		"hello-libs-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "hello-libs",
+			"buildCommand" : "D:\\sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build D:\\opensource\\android-ndk\\hello-libs\\app\\.externalNativeBuild\\cmake\\debug\\arm64-v8a --target hello-libs",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=aarch64-none-linux-android21 --gcc-toolchain=D:/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dhello_libs_EXPORTS -ID:\\opensource\\android-ndk\\hello-libs\\app\\src\\main\\cpp\\..\\..\\..\\..\\distribution\\gmath\\include -ID:\\opensource\\android-ndk\\hello-libs\\app\\src\\main\\cpp\\..\\..\\..\\..\\distribution\\gperf\\include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -std=gnu++11 -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "D:/opensource/android-ndk/hello-libs/app/src/main/cpp/hello-libs.cpp",
+					"workingDirectory" : "D:/opensource/android-ndk/hello-libs/app/.externalNativeBuild/cmake/debug/arm64-v8a"
+				}
+			],
+			"output" : "D:/opensource/android-ndk/hello-libs/app/build/intermediates/cmake/debug/obj/arm64-v8a/libhello-libs.so",
+			"toolchain" : "1534523253"
+		},
+		"lib_gmath-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "lib_gmath",
+			"buildType" : "debug",
+			"output" : "D:/opensource/android-ndk/hello-libs/app/src/main/cpp/../../../../distribution/gmath/lib/arm64-v8a/libgmath.a",
+			"toolchain" : "1534523253"
+		},
+		"lib_gperf-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "lib_gperf",
+			"buildType" : "debug",
+			"output" : "D:/opensource/android-ndk/hello-libs/app/src/main/cpp/../../../../distribution/gperf/lib/arm64-v8a/libgperf.so",
+			"toolchain" : "1534523253"
+		}
+	},
+	"toolchains" : 
+	{
+		"1534523253" : 
+		{
+			"cCompilerExecutable" : "D:/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe",
+			"cppCompilerExecutable" : "D:/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe"
+		}
+	}
+}
